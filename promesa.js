@@ -71,3 +71,13 @@ const id = 1;
 //     })
 //     .catch(err => console.log(err))
 
+
+let nombre;
+
+getEmpledo(id)
+    .then (empleado => {
+        nombre = empleado;
+        return getSalario(id)
+    })
+    .then( salario => console.log('El empleado', nombre, 'tiene un salario de', salario))
+    .catch(err => console.log (err));
